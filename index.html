@@ -199,7 +199,9 @@
   .hueco h3 { font: 800 15.5px/1.3 var(--f-sub); margin-bottom: 4px; }
   .hueco p { font-size: 13.8px; color: var(--ink-2); margin: 0 0 8px; }
   .hueco .quien { display: flex; flex-wrap: wrap; gap: 6px; }
-  .hueco.is-listo { outline: 2px solid rgba(76, 100, 217, .35); }
+  .hueco.is-listo { outline: 2px solid rgba(76, 175, 80, .4); }
+  .hueco.is-listo > b { background: var(--ok); }
+  .chip.is-resuelto { background: var(--ok-bg); color: var(--ok); }
 
   /* Switched off */
   .apagados { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
@@ -234,11 +236,11 @@
       <span class="pill"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i>Mapa de medición</span>
     </div>
     <h1>Quién mide qué en <span>actuaria.com</span></h1>
-    <p class="cover_lead">Las páginas, el Tag Manager que reparte los avisos y las cuentas que los reciben: qué mide cada una, qué cuenta como contacto y de quién es cada cuenta. Estado al <strong>9 de noviembre de 2026</strong>, con la versión 6 de Tag Manager publicada.</p>
+    <p class="cover_lead">Las páginas, el Tag Manager que reparte los avisos y las cuentas que los reciben: qué mide cada una, qué cuenta como contacto y de quién es cada cuenta. Estado al <strong>9 de noviembre de 2026</strong>, con la versión 7 de Tag Manager publicada.</p>
     <div class="kpis">
       <div class="kpi"><b>1</b><span>Tag Manager reparte todos los avisos de las dos páginas</span></div>
       <div class="kpi"><b>4</b><span>cuentas reciben avisos: GA4, Clarity y dos de Google Ads</span></div>
-      <div class="kpi"><b>3</b><span>acciones cuentan como contacto: formulario, WhatsApp y teléfono</span></div>
+      <div class="kpi"><b>4</b><span>acciones cuentan como contacto: formulario, WhatsApp, teléfono y cotización</span></div>
       <div class="kpi"><b class="is-bad">0</b><span>avisos llegan a Meta: no hay Pixel en ninguna página</span></div>
     </div>
   </div>
@@ -264,7 +266,6 @@
           <span><i class="ley_linea" style="border-color:var(--c-actuaria)"></i>Cuenta de Actuaria</span>
           <span><i class="ley_linea" style="border-color:var(--c-pmv)"></i>Cuenta de PMV</span>
           <span><i class="ley_linea" style="border-color:var(--c-sinconf)"></i>Dueño sin confirmar</span>
-          <span><i class="ley_linea" style="border-color:var(--c-actuaria);border-top-style:dashed"></i>Propuesta, sin publicar</span>
           <span><i class="ley_linea" style="border-color:var(--c-falta);border-top-style:dotted"></i>No existe</span>
         </div>
         <div class="filtros" role="group" aria-label="Ver qué recibe cada cuenta">
@@ -323,7 +324,7 @@
             <span class="nodo_ico"><i class="fa-solid fa-file-invoice-dollar" aria-hidden="true"></i></span>
             <div><h4>estudio-actuarial<wbr>.actuaria.com<small>Landing aparte, no es Webflow</small></h4>
               <ul class="acciones" aria-label="Qué se puede hacer"><li><i class="fa-solid fa-file-signature" aria-hidden="true"></i>Pedir cotización</li></ul>
-              <p class="estado is-warn"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Carga el mismo Tag Manager. Mide visitas, pero la cotización todavía no.</p>
+              <p class="estado is-ok"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Carga el mismo Tag Manager. Mide visitas y, desde el 9 de noviembre, cada cotización.</p>
             </div>
           </article>
           <article class="nodo is-apagado" id="p-staging" data-nodo tabindex="0">
@@ -341,18 +342,18 @@
           <article class="nodo gtm" id="n-gtm">
             <div class="gtm_cab" data-nodo-gtm tabindex="0" role="button" aria-label="Google Tag Manager: ver todo lo conectado">
               <h4><i class="fa-solid fa-truck-fast" aria-hidden="true"></i>Google Tag Manager <code>GTM-WVB8ND3W</code> <span class="chip">De Actuaria</span></h4>
-              <p>Un solo contenedor para las dos páginas. Cada etiqueta de abajo es un aviso: qué lo dispara y a qué cuenta llega. Versión publicada: 6, del 6 de noviembre.</p>
+              <p>Un solo contenedor para las dos páginas. Cada etiqueta de abajo es un aviso: qué lo dispara y a qué cuenta llega. Versión publicada: 7, del 9 de noviembre.</p>
             </div>
             <div class="tags">
               <div class="tag k-actuaria" id="t-ga4" data-nodo tabindex="0"><b>Google tag de GA4</b><small>Cada visita y cada página vista, apenas abre la página.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-eventos" data-nodo tabindex="0"><b>Avisos de contacto y uso</b><small>Formulario enviado, clic en WhatsApp, clic en el teléfono y uso de las calculadoras.</small><span class="dest">→ GA4</span></div>
+              <div class="tag k-actuaria" id="t-v7" data-nodo tabindex="0"><b>Cotización de la landing</b><small>Cada cotización registrada cuenta como contacto, con el plan elegido. Desde el 9 de noviembre.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-inp" data-nodo tabindex="0"><b>Velocidad al tocar (INP)</b><small>Cuánto tarda la página en responder a un toque, en visitas reales.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-clarity" data-nodo tabindex="0"><b>Microsoft Clarity</b><small>Graba las visitas y arma los mapas de calor, al terminar de cargar.</small><span class="dest">→ Clarity</span></div>
               <div class="tag k-sinconf" id="t-adsconv" data-nodo tabindex="0"><b>Tres conversiones de Ads</b><small>Las mismas tres acciones: formulario, WhatsApp y llamada.</small><span class="dest">→ Ads ·4489</span></div>
               <div class="tag k-sinconf" id="t-linker" data-nodo tabindex="0"><b>Vinculador de conversiones</b><small>Recuerda de qué anuncio vino el clic, para atribuirle la conversión.</small><span class="dest">→ Ads</span></div>
               <div class="tag k-pmv" id="t-adspmv" data-nodo tabindex="0"><b>Google tag de Ads de PMV</b><small>Solo la visita, para armar audiencias. No lleva ninguna conversión.</small><span class="dest">→ Ads PMV</span></div>
               <p class="tags_sep">Lo que todavía no está</p>
-              <div class="tag k-actuaria is-propuesta" id="t-v7" data-nodo tabindex="0"><b>Cotización de la landing<span class="marca">Propuesta</span></b><small>Versión 7, lista y sin publicar: contar cada cotización como contacto.</small><span class="dest">→ GA4</span></div>
               <div class="tag is-falta" id="t-pixel" data-nodo tabindex="0"><b>Pixel de Meta<span class="marca">No existe</span></b><small>Ninguna página lo tiene: Meta no recibe ni la visita ni el contacto.</small><span class="dest">→ Meta</span></div>
             </div>
           </article>
@@ -364,7 +365,7 @@
           <p class="col_tit"><b>4</b>Las cuentas que reciben</p>
           <article class="nodo cuenta" id="a-ga4" data-nodo tabindex="0">
             <span class="nodo_ico" style="color:var(--c-actuaria)"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span>
-            <div><span class="chip is-actuaria">De Actuaria</span><h4>Google Analytics 4</h4><code class="id">G-PG79TRGV7Z</code><p>Visitas, de dónde llegan y contactos. Cuenta como contacto el formulario, WhatsApp y el teléfono. También mide las calculadoras y la velocidad.</p></div>
+            <div><span class="chip is-actuaria">De Actuaria</span><h4>Google Analytics 4</h4><code class="id">G-PG79TRGV7Z</code><p>Visitas, de dónde llegan y contactos. Cuenta como contacto el formulario, WhatsApp, el teléfono y la cotización de la landing. También mide las calculadoras y la velocidad.</p></div>
           </article>
           <article class="nodo cuenta" id="a-clarity" data-nodo tabindex="0">
             <span class="nodo_ico" style="color:var(--c-actuaria)"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
@@ -416,8 +417,8 @@
       <div class="fila">
         <div class="celda"><strong><i class="fa-solid fa-file-signature" aria-hidden="true"></i>Pide una cotización</strong>En la landing del estudio actuarial</div>
         <div class="celda"><span class="eti">El contacto llega a</span>El sistema propio de la landing</div>
-        <div class="celda"><span class="eti">Lo que se mide</span>Hoy nada: la landing avisa «pedir_cotizacion», pero Tag Manager no lo escucha. Con la versión 7: <code>generate_lead</code> en GA4.</div>
-        <div class="celda"><span class="eti">¿Cuenta como contacto?</span><span class="badge is-hoyno"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>Hoy no</span></div>
+        <div class="celda"><span class="eti">Lo que se mide</span>Desde el 9 de noviembre: <code>generate_lead</code> en GA4, con el plan, la página y el estado. No va a Google Ads. Para comparar con semanas anteriores, separar por página.</div>
+        <div class="celda"><span class="eti">¿Cuenta como contacto?</span><span class="badge is-si"><i class="fa-solid fa-check" aria-hidden="true"></i>Sí, desde el 9-nov</span></div>
       </div>
       <div class="fila">
         <div class="celda"><strong><i class="fa-solid fa-user-tie" aria-hidden="true"></i>Se postula a un empleo</strong>En Nosotros</div>
@@ -490,9 +491,9 @@
   </section>
 
   <section class="seccion wrap" id="huecos">
-    <div class="seccion_cab"><span class="seccion_num">5</span><div><h2>Puntos ciegos y lo que falta</h2><p class="seccion_bajada">Lo que hoy no se ve, y quién puede resolverlo. Los cuatro primeros explican por qué la pauta de redes aparece sin contactos.</p></div></div>
+    <div class="seccion_cab"><span class="seccion_num">5</span><div><h2>Puntos ciegos y lo que falta</h2><p class="seccion_bajada">Lo que hoy no se ve, y quién puede resolverlo. El primero ya se resolvió; los tres siguientes explican por qué la pauta todavía no se puede seguir hasta el anuncio.</p></div></div>
     <div class="huecos">
-      <article class="hueco is-listo"><b>1</b><div><h3>Las cotizaciones de la landing no se cuentan</h3><p>La versión 7 de Tag Manager ya está lista y probada sin enviar datos: cuenta cada cotización como contacto en GA4. Falta publicarla y decidir si también va a Google Ads.</p><div class="quien"><span class="chip is-actuaria">Área de Producto</span><span class="chip is-google">Lista para publicar</span></div></div></article>
+      <article class="hueco is-listo"><b><i class="fa-solid fa-check" aria-hidden="true"></i></b><div><h3>Las cotizaciones de la landing ya se cuentan</h3><p>Desde el 9 de noviembre, con la versión 7 de Tag Manager, cada cotización registrada llega a GA4 como contacto. A Google Ads llegará cuando PMV importe los contactos desde GA4 (punto 2).</p><div class="quien"><span class="chip is-actuaria">Área de Producto</span><span class="chip is-resuelto">Resuelto · 9 de noviembre</span></div></div></article>
       <article class="hueco"><b>2</b><div><h3>La cuenta de Ads de PMV no recibe conversiones</h3><p>Sus campañas no saben qué anuncio trae contactos. Lo más simple: que PMV importe los contactos desde GA4 vinculando su cuenta, o que nos dé una etiqueta de conversión.</p><div class="quien"><span class="chip is-pmv">PMV</span></div></div></article>
       <article class="hueco"><b>3</b><div><h3>Meta no ve ningún contacto</h3><p>Sin Pixel de Meta, la pauta de Facebook e Instagram no puede medirse ni optimizarse por contactos.</p><div class="quien"><span class="chip is-pmv">PMV</span><span class="chip is-actuaria">Área de Producto</span></div></div></article>
       <article class="hueco"><b>4</b><div><h3>A dónde apunta cada anuncio</h3><p>Falta confirmar la página de destino de cada anuncio y etiquetarlos con UTM, para que GA4 los separe por campaña.</p><div class="quien"><span class="chip is-pmv">PMV</span></div></div></article>
@@ -511,7 +512,7 @@
   </section>
 
   <footer class="wrap pie">
-    <p><strong>Área de Producto · Actuaria Consultores.</strong> Estado al 9 de noviembre de 2026, revisado en el contenedor publicado de Tag Manager (versión 6), en el código de las dos páginas y en las cuentas.</p>
+    <p><strong>Área de Producto · Actuaria Consultores.</strong> Estado al 9 de noviembre de 2026, revisado en el contenedor publicado de Tag Manager (versión 7), en el código de las dos páginas y en las cuentas.</p>
     <p>Esta página es pública a propósito, para compartirla con un enlace, y no aparece en buscadores. Los identificadores que muestra ya son visibles en el código del sitio; no contiene contraseñas, tokens ni correos personales.</p>
   </footer>
 </main>
@@ -524,7 +525,7 @@
     ['s-gads', 'p-web', 'pmv'], ['s-gads', 'p-landing', 'pmv', true],
     ['s-meta', 'p-landing', 'pmv'], ['s-meta', 'p-web', 'pmv', true],
     ['p-web', 'n-gtm', 'navy'], ['p-landing', 'n-gtm', 'navy'],
-    ['t-ga4', 'a-ga4', 'actuaria'], ['t-eventos', 'a-ga4', 'actuaria'], ['t-inp', 'a-ga4', 'actuaria'], ['t-v7', 'a-ga4', 'propuesta'],
+    ['t-ga4', 'a-ga4', 'actuaria'], ['t-eventos', 'a-ga4', 'actuaria'], ['t-inp', 'a-ga4', 'actuaria'], ['t-v7', 'a-ga4', 'actuaria'],
     ['t-clarity', 'a-clarity', 'actuaria'],
     ['t-adsconv', 'a-ads1', 'sinconf'], ['t-linker', 'a-ads1', 'sinconf'], ['t-linker', 'a-ads2', 'pmv'],
     ['t-adspmv', 'a-ads2', 'pmv'],
