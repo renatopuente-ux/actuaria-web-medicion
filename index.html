@@ -238,7 +238,7 @@
     <h1>Quién mide qué en <span>actuaria.com</span></h1>
     <p class="cover_lead">Las páginas, el Tag Manager que reparte los avisos y las cuentas que los reciben: qué mide cada una, qué cuenta como contacto y de quién es cada cuenta. Estado al <strong>9 de noviembre de 2026</strong>, con la versión 7 de Tag Manager publicada.</p>
     <div class="kpis">
-      <div class="kpi"><b>1</b><span>Tag Manager reparte todos los avisos de las dos páginas</span></div>
+      <div class="kpi"><b>1</b><span>Tag Manager reparte todos los avisos de las tres páginas</span></div>
       <div class="kpi"><b>4</b><span>cuentas reciben avisos: GA4, Clarity y dos de Google Ads</span></div>
       <div class="kpi"><b>4</b><span>acciones cuentan como contacto: formulario, WhatsApp, teléfono y cotización</span></div>
       <div class="kpi"><b class="is-bad">0</b><span>avisos llegan a Meta: no hay Pixel en ninguna página</span></div>
@@ -327,6 +327,13 @@
               <p class="estado is-ok"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Carga el mismo Tag Manager. Mide visitas y, desde el 9 de noviembre, cada cotización.</p>
             </div>
           </article>
+          <article class="nodo" id="p-cotizar" data-nodo tabindex="0">
+            <span class="nodo_ico"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
+            <div><h4>cotizar<wbr>.actuaria.com<small>Cotización directa, la misma app que la landing</small></h4>
+              <ul class="acciones" aria-label="Qué se puede hacer"><li><i class="fa-solid fa-file-signature" aria-hidden="true"></i>Pedir cotización</li></ul>
+              <p class="estado is-ok"><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Carga el mismo Tag Manager. Mide visitas y, desde el 9 de noviembre, cada cotización.</p>
+            </div>
+          </article>
           <article class="nodo is-apagado" id="p-staging" data-nodo tabindex="0">
             <span class="nodo_ico"><i class="fa-solid fa-flask" aria-hidden="true"></i></span>
             <div><h4>actuaweb.webflow.io<small>Staging, para probar antes de publicar</small></h4>
@@ -335,19 +342,19 @@
           </article>
         </div>
 
-        <p class="paso"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i>las dos cargan Tag Manager</p>
+        <p class="paso"><i class="fa-solid fa-arrow-down" aria-hidden="true"></i>las tres cargan Tag Manager</p>
 
         <div class="col" data-col="3">
           <p class="col_tit"><b>3</b>Tag Manager reparte</p>
           <article class="nodo gtm" id="n-gtm">
             <div class="gtm_cab" data-nodo-gtm tabindex="0" role="button" aria-label="Google Tag Manager: ver todo lo conectado">
               <h4><i class="fa-solid fa-truck-fast" aria-hidden="true"></i>Google Tag Manager <code>GTM-WVB8ND3W</code> <span class="chip">De Actuaria</span></h4>
-              <p>Un solo contenedor para las dos páginas. Cada etiqueta de abajo es un aviso: qué lo dispara y a qué cuenta llega. Versión publicada: 7, del 9 de noviembre.</p>
+              <p>Un solo contenedor para las tres páginas. Cada etiqueta de abajo es un aviso: qué lo dispara y a qué cuenta llega. Versión publicada: 7, del 9 de noviembre.</p>
             </div>
             <div class="tags">
               <div class="tag k-actuaria" id="t-ga4" data-nodo tabindex="0"><b>Google tag de GA4</b><small>Cada visita y cada página vista, apenas abre la página.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-eventos" data-nodo tabindex="0"><b>Avisos de contacto y uso</b><small>Formulario enviado, clic en WhatsApp, clic en el teléfono y uso de las calculadoras.</small><span class="dest">→ GA4</span></div>
-              <div class="tag k-actuaria" id="t-v7" data-nodo tabindex="0"><b>Cotización de la landing</b><small>Cada cotización registrada cuenta como contacto, con el plan elegido. Desde el 9 de noviembre.</small><span class="dest">→ GA4</span></div>
+              <div class="tag k-actuaria" id="t-v7" data-nodo tabindex="0"><b>Cotizaciones</b><small>Cada cotización registrada en la landing o en cotizar.actuaria.com cuenta como contacto, con el plan elegido. Desde el 9 de noviembre.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-inp" data-nodo tabindex="0"><b>Velocidad al tocar (INP)</b><small>Cuánto tarda la página en responder a un toque, en visitas reales.</small><span class="dest">→ GA4</span></div>
               <div class="tag k-actuaria" id="t-clarity" data-nodo tabindex="0"><b>Microsoft Clarity</b><small>Graba las visitas y arma los mapas de calor, al terminar de cargar.</small><span class="dest">→ Clarity</span></div>
               <div class="tag k-sinconf" id="t-adsconv" data-nodo tabindex="0"><b>Tres conversiones de Ads</b><small>Las mismas tres acciones: formulario, WhatsApp y llamada.</small><span class="dest">→ Ads ·4489</span></div>
@@ -365,7 +372,7 @@
           <p class="col_tit"><b>4</b>Las cuentas que reciben</p>
           <article class="nodo cuenta" id="a-ga4" data-nodo tabindex="0">
             <span class="nodo_ico" style="color:var(--c-actuaria)"><i class="fa-solid fa-chart-column" aria-hidden="true"></i></span>
-            <div><span class="chip is-actuaria">De Actuaria</span><h4>Google Analytics 4</h4><code class="id">G-PG79TRGV7Z</code><p>Visitas, de dónde llegan y contactos. Cuenta como contacto el formulario, WhatsApp, el teléfono y la cotización de la landing. También mide las calculadoras y la velocidad.</p></div>
+            <div><span class="chip is-actuaria">De Actuaria</span><h4>Google Analytics 4</h4><code class="id">G-PG79TRGV7Z</code><p>Visitas, de dónde llegan y contactos. Cuenta como contacto el formulario, WhatsApp, el teléfono y las cotizaciones. También mide las calculadoras y la velocidad.</p></div>
           </article>
           <article class="nodo cuenta" id="a-clarity" data-nodo tabindex="0">
             <span class="nodo_ico" style="color:var(--c-actuaria)"><i class="fa-solid fa-fire" aria-hidden="true"></i></span>
@@ -415,8 +422,8 @@
         <div class="celda"><span class="eti">¿Cuenta como contacto?</span><span class="badge is-si"><i class="fa-solid fa-check" aria-hidden="true"></i>Sí</span></div>
       </div>
       <div class="fila">
-        <div class="celda"><strong><i class="fa-solid fa-file-signature" aria-hidden="true"></i>Pide una cotización</strong>En la landing del estudio actuarial</div>
-        <div class="celda"><span class="eti">El contacto llega a</span>El sistema propio de la landing</div>
+        <div class="celda"><strong><i class="fa-solid fa-file-signature" aria-hidden="true"></i>Pide una cotización</strong>En la landing del estudio actuarial o en cotizar.actuaria.com</div>
+        <div class="celda"><span class="eti">El contacto llega a</span>Cliente 360, el CRM de Actuaria</div>
         <div class="celda"><span class="eti">Lo que se mide</span>Desde el 9 de noviembre: <code>generate_lead</code> en GA4, con el plan, la página y el estado. No va a Google Ads. Para comparar con semanas anteriores, separar por página.</div>
         <div class="celda"><span class="eti">¿Cuenta como contacto?</span><span class="badge is-si"><i class="fa-solid fa-check" aria-hidden="true"></i>Sí, desde el 9-nov</span></div>
       </div>
@@ -487,17 +494,23 @@
         <div class="celda"><span class="eti">Quién más entra</span>Por confirmar</div>
         <div class="celda"><span class="eti">Para qué</span>Recibe los leads del formulario de actuaria.com. No guarda de dónde vino cada lead.</div>
       </div>
+      <div class="fila">
+        <div class="celda"><strong><i class="fa-solid fa-address-card" aria-hidden="true"></i>Cliente 360</strong>CRM propio de Actuaria</div>
+        <div class="celda"><span class="eti">Dueño</span><span class="chip is-actuaria">Actuaria</span></div>
+        <div class="celda"><span class="eti">Quién más entra</span>Por confirmar</div>
+        <div class="celda"><span class="eti">Para qué</span>Recibe las cotizaciones de la landing del estudio actuarial y de cotizar.actuaria.com. Todavía no guarda de dónde vino cada una.</div>
+      </div>
     </div>
   </section>
 
   <section class="seccion wrap" id="huecos">
     <div class="seccion_cab"><span class="seccion_num">5</span><div><h2>Puntos ciegos y lo que falta</h2><p class="seccion_bajada">Lo que hoy no se ve, y quién puede resolverlo. El primero ya se resolvió; los tres siguientes explican por qué la pauta todavía no se puede seguir hasta el anuncio.</p></div></div>
     <div class="huecos">
-      <article class="hueco is-listo"><b><i class="fa-solid fa-check" aria-hidden="true"></i></b><div><h3>Las cotizaciones de la landing ya se cuentan</h3><p>Desde el 9 de noviembre, con la versión 7 de Tag Manager, cada cotización registrada llega a GA4 como contacto. A Google Ads llegará cuando PMV importe los contactos desde GA4 (punto 2).</p><div class="quien"><span class="chip is-actuaria">Área de Producto</span><span class="chip is-resuelto">Resuelto · 9 de noviembre</span></div></div></article>
+      <article class="hueco is-listo"><b><i class="fa-solid fa-check" aria-hidden="true"></i></b><div><h3>Las cotizaciones ya se cuentan</h3><p>Desde el 9 de noviembre, con la versión 7 de Tag Manager, cada cotización registrada en la landing del estudio actuarial o en cotizar.actuaria.com llega a GA4 como contacto. A Google Ads llegará cuando PMV importe los contactos desde GA4 (punto 2).</p><div class="quien"><span class="chip is-actuaria">Área de Producto</span><span class="chip is-resuelto">Resuelto · 9 de noviembre</span></div></div></article>
       <article class="hueco"><b>2</b><div><h3>La cuenta de Ads de PMV no recibe conversiones</h3><p>Sus campañas no saben qué anuncio trae contactos. Lo más simple: que PMV importe los contactos desde GA4 vinculando su cuenta, o que nos dé una etiqueta de conversión.</p><div class="quien"><span class="chip is-pmv">PMV</span></div></div></article>
       <article class="hueco"><b>3</b><div><h3>Meta no ve ningún contacto</h3><p>Sin Pixel de Meta, la pauta de Facebook e Instagram no puede medirse ni optimizarse por contactos.</p><div class="quien"><span class="chip is-pmv">PMV</span><span class="chip is-actuaria">Área de Producto</span></div></div></article>
       <article class="hueco"><b>4</b><div><h3>A dónde apunta cada anuncio</h3><p>Falta confirmar la página de destino de cada anuncio y etiquetarlos con UTM, para que GA4 los separe por campaña.</p><div class="quien"><span class="chip is-pmv">PMV</span></div></div></article>
-      <article class="hueco"><b>5</b><div><h3>Salesforce no guarda el origen del lead</h3><p>Un lead del formulario llega sin decir si vino de Google, de un anuncio o directo. Con el origen guardado se podría seguir la pauta hasta la venta.</p><div class="quien"><span class="chip is-google">Por definir</span></div></div></article>
+      <article class="hueco"><b>5</b><div><h3>Salesforce y Cliente 360 no guardan el origen</h3><p>Un lead del formulario o una cotización llegan sin decir si vinieron de Google, de un anuncio o directo. Con el origen guardado (UTM, gclid y fbclid) se podría seguir la pauta hasta la venta.</p><div class="quien"><span class="chip is-google">Por definir</span></div></div></article>
       <article class="hueco"><b>6</b><div><h3>¿De quién es la cuenta de conversiones?</h3><p>AW-16714364489 recibe los contactos, pero no sabemos quién la usa. Si nadie la usa, conviene mandar las conversiones a la cuenta de PMV.</p><div class="quien"><span class="chip is-sinconf">Por confirmar</span></div></div></article>
     </div>
   </section>
@@ -512,7 +525,7 @@
   </section>
 
   <footer class="wrap pie">
-    <p><strong>Área de Producto · Actuaria Consultores.</strong> Estado al 9 de noviembre de 2026, revisado en el contenedor publicado de Tag Manager (versión 7), en el código de las dos páginas y en las cuentas.</p>
+    <p><strong>Área de Producto · Actuaria Consultores.</strong> Estado al 9 de noviembre de 2026, revisado en el contenedor publicado de Tag Manager (versión 7), en el código de las tres páginas y en las cuentas.</p>
     <p>Esta página es pública a propósito, para compartirla con un enlace, y no aparece en buscadores. Los identificadores que muestra ya son visibles en el código del sitio; no contiene contraseñas, tokens ni correos personales.</p>
   </footer>
 </main>
@@ -524,7 +537,7 @@
     ['s-google', 'p-web', 'neutro'], ['s-directo', 'p-web', 'neutro'],
     ['s-gads', 'p-web', 'pmv'], ['s-gads', 'p-landing', 'pmv', true],
     ['s-meta', 'p-landing', 'pmv'], ['s-meta', 'p-web', 'pmv', true],
-    ['p-web', 'n-gtm', 'navy'], ['p-landing', 'n-gtm', 'navy'],
+    ['p-web', 'n-gtm', 'navy'], ['p-landing', 'n-gtm', 'navy'], ['p-cotizar', 'n-gtm', 'navy'], ['s-google', 'p-cotizar', 'neutro'],
     ['t-ga4', 'a-ga4', 'actuaria'], ['t-eventos', 'a-ga4', 'actuaria'], ['t-inp', 'a-ga4', 'actuaria'], ['t-v7', 'a-ga4', 'actuaria'],
     ['t-clarity', 'a-clarity', 'actuaria'],
     ['t-adsconv', 'a-ads1', 'sinconf'], ['t-linker', 'a-ads1', 'sinconf'], ['t-linker', 'a-ads2', 'pmv'],
